@@ -2,13 +2,60 @@ $(document).ready(()=>{
     $('.review-container').slick({
         infinite: true,
         slidesToShow: 3,
-        slidesToScroll: 3
+        slidesToScroll: 3,
+        responsive: [
+            {
+                breakpoint: 280,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 375,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 426,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    dots: true
+                }
+            },
+
+        ]
     });
+
+    window.addEventListener("resize", function() {
+        if (window.innerWidth <= 768) {
+            $('.examples-container').slick({
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: true
+            });
+            sliderIsLive = true;
+        }
+        else {
+            if (sliderIsLive) {
+                $('.your-slider').slick('unslick');
+                sliderIsLive = false;
+            }
+        }
+    });
+
     $('.open-image').magnificPopup({
         type: 'image'
     });
     new WOW({
-        animateClass: 'animate__animated'
+        animateClass: 'animate__animated',
+        mobile: true
     }).init();
 
     $('.callback-action').click(() => {
@@ -37,16 +84,13 @@ $(document).ready(()=>{
             ;
         }
     });
-    /*
-    $('#main-link').click(() => {
-        $('#second-page').css('display', 'block');
-        $('#first-page').hide();
-    });
-    $('#second-link').click(() => {
-        $('#first-page').css('display', 'block');
-        $('#second-page').hide();
-    });*/
 
+    $('.burger').click(() => {
+        $('.header-container .header-items').css('display', 'flex');
+    });
+    $('.header-items, .header-items a').click(() => {
+        $('.header-container .header-items').hide();
+    });
 
 
 

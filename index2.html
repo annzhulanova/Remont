@@ -8,11 +8,16 @@
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/adaptive.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
 </head>
 <body>
 
 <div class="header">
     <div class="header-container">
+        <div class="burger">
+            &#9776;
+        </div>
         <div class="logo">
             <a href="#">МАСТЕР<span>ЛОМАСТЕР</span></a>
         </div>
@@ -66,7 +71,7 @@
             </div>
         </div>
         <div class="main-image">
-            <div class="general-image">
+            <div class="general-image" id="general-image">
                 <img src="images/master.png" alt="">
             </div>
             <div class="main-device" id="main-device">
@@ -105,7 +110,7 @@
                 <img src="images/stopwatch.png" alt="">
             </div>
             <div class="advantage-text">
-                Выезд на дом <br>за <span>60 минут</span>
+                Выезд на дом за <span>60 минут</span>
             </div>
         </div>
         <div class="advantage wow animate__zoomIn">
@@ -161,7 +166,7 @@
     <div class="block-title wow animate__fadeInDown">
         Частые поломки стиральных машин и цены ремонта
     </div>
-    <div class="price-image-main">
+    <div class="price-image-main" id="price-image-main">
         <img src="images/washer-2.png" alt="">
     </div>
     <div class="price-image-ellipse" id="price-image-eclipse">
@@ -227,7 +232,7 @@
                 </div>
             </div>
         </div>
-        <div class="price-box-right">
+        <div class="price-box-right" id="price-box-right">
             <div class="price-item wow animate__slideInRight">
                 <div class="price-item-description price-item-text">
                     Замена кронштейна люка
@@ -430,7 +435,7 @@
         Поломки, которые я устранил
     </div>
     <div class="examples-container wow animate__fadeIn">
-        <div class="photo-box main-photo">
+        <div class="photo-box main-photo" id="main-photo">
             <a href="images/photo-9.JPG" class="open-image">
                 <img src="images/photo-9.JPG" alt="">
             </a>
